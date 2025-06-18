@@ -23,4 +23,14 @@ A simple web application that collects survey responses from users and stores th
 - **Tools**: Body-parser, CORS
 
 ## Project Structure
-
+project/
+│
+├── public/
+│ ├── Index.html # Survey form page
+│ ├── ViewResult.html # Results summary page
+│ ├── Style.css # Stylesheet
+│ └── Sumsang.js # Optional JS (for dynamic actions)
+│
+├── server.js # Express backend server
+├── package.json
+└── README.md
