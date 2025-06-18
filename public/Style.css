@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    border: black solid 1px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px
+}
+
+/* Top container */
+.top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Allows items to wrap on smaller screens */
+}
+
+/* Fill out view container */
+.fillOut-viewContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+    width: 40%;
+   
+}
+
+/* Main form container */
+.main-form-container {
+    width: 50%;
+    height: 22%;
+    display: flex;
+    padding: 40px;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .main-form-container {
+        width: 70%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .fillOut-viewContainer {
+        width: 50%;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fillOut-viewContainer {
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-form-container {
+        width: 100%;
+        padding: 15px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .main-container {
+        height: auto;
+    }
+
+    .main-form-container,
+    .fillOut-viewContainer {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.food-container {
+
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    padding-top: 15px;
+
+}
+.pointer {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.pointer:hover {
+    background-color: #e0e0e0; /* light grey background on hover */
+}
+
+/* Optional: Active effect when clicking */
+.pointer:active {
+    background-color: #ccc; /* slightly darker when clicked */
+}
+#submitButton, .submitButton {
+  background-color: #4da6ff;
+  color: white;
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#submitButton:hover, .submitButton:hover {
+  background-color: #3399ff; /* a bit darker blue */
+}
+
+/* Active (clicked) effect */
+#submitButton:active, .submitButton:active {
+  background-color: #287acc; /* even darker blue */
+}
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div id="main-container" class="main-container">
+    <div class="top-container" style="padding-top: 10px;">
+      <div class="surveyName-container" style="padding-left: 70px;">
+        <p id="surveyId" class="pointer"><b>_SURVEY</b></p>
+      </div>
+      <div class="fillOut-viewContainer">
+        <div>
+          <p id="fillOutId" class="pointer" style="color: blue;">FILL OUT SURVEY</p>
+        </div>
+        <div>
+          <p id="ViewResultsId" class="pointer">VIEW SURVEY RESULTS</p>
+        </div>
+      </div>
+    </div>
+
+    <form id="surveyForm" method="POST">
+      <div class="main-form-container">
+        <p><b>Personal Details:</b></p>
+        <div class="personalDetail-Container" style="padding-top: 16px; padding-left: 90px;">
+          <label for="name">Full Names</label><br>
+          <input type="text" id="name" name="name" required><br>
+
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email" required><br>
+
+          <label for="dob">Date of Birth</label><br>
+          <input type="date" id="dob" name="dob" required><br>
+
+          <label for="contacts">Contacts</label><br>
+          <input type="text" id="contacts" name="contacts" placeholder="+27" required><br>
+        </div>
+      </div>
+
+      <div class="food-container">
+        <p>What is your favourite food?</p>
+        <input type="checkbox" name="food" value="Pizza"> Pizza
+        <input type="checkbox" name="food" value="Pasta"> Pasta
+        <input type="checkbox" name="food" value="Pap and Wors"> Pap and Wors
+        <input type="checkbox" name="food" value="Other"> Other
+      </div>
+
+      <div class="AgreementLevel-container" style="padding: 80px 70px 0 40px;">
+        <p>Please rate your agreement from 1 to 5:</p>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+          <tr style="background-color: #d3d3d3;">
+            <th></th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+          </tr>
+          <tr>
+            <td>I like to watch movies</td>
+            <td><input type="radio" name="q1" value="Strongly Agree"></td>
+            <td><input type="radio" name="q1" value="Agree"></td>
+            <td><input type="radio" name="q1" value="Neutral"></td>
+            <td><input type="radio" name="q1" value="Disagree"></td>
+            <td><input type="radio" name="q1" value="Strongly Disagree"></td>
+          </tr>
+          <tr>
+            <td>I listen to radio</td>
+            <td><input type="radio" name="q2" value="Strongly Agree"></td>
+            <td><input type="radio" name="q2" value="Agree"></td>
+            <td><input type="radio" name="q2" value="Neutral"></td>
+            <td><input type="radio" name="q2" value="Disagree"></td>
+            <td><input type="radio" name="q2" value="Strongly Disagree"></td>
+          </tr>
+          <tr>
+            <td>I like to eat out</td>
+            <td><input type="radio" name="q3" value="Strongly Agree"></td>
+            <td><input type="radio" name="q3" value="Agree"></td>
+            <td><input type="radio" name="q3" value="Neutral"></td>
+            <td><input type="radio" name="q3" value="Disagree"></td>
+            <td><input type="radio" name="q3" value="Strongly Disagree"></td>
+          </tr>
+          <tr>
+            <td>I like to watch TV</td>
+            <td><input type="radio" name="q4" value="Strongly Agree"></td>
+            <td><input type="radio" name="q4" value="Agree"></td>
+            <td><input type="radio" name="q4" value="Neutral"></td>
+            <td><input type="radio" name="q4" value="Disagree"></td>
+            <td><input type="radio" name="q4" value="Strongly Disagree"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <input type="submit" class="submitButton" value="submit">
+      </div>
+    </form>
+  </div>
+
+  <script src="Sumsang.js"></script>
+</body>
+</html>

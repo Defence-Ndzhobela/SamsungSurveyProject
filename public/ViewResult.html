@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey Results</title>
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+
+  <!-- Start of main-container -->
+  <div id="main-container" class="main-container">
+
+    <!-- Top Navigation -->
+    <div class="top-container" id="top-container" style="padding-top: 10px;">
+      <div class="surveyName-container" style="padding-left: 70px;">
+        <p id="surveyId"><b>_SURVEY</b></p>
+      </div>
+
+      <div class="fillOut-viewContainer">
+        <div>
+          <p id="fillOutId">FILL OUT SURVEY</p>
+        </div>
+        <div>
+          <p id="ViewResultsId" style="color: blue;">VIEW SURVEY RESULTS</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 style="padding-left: 40px;">Survey Results Summary</h1>
+
+    <!-- Results Display -->
+    <ul id="resultList"></ul>
+
+    <!-- Script to Load Survey Data -->
+    <script>
+      fetch('http://localhost:3000/results')
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById('resultList');
+          list.innerHTML = `
+            <li>Total number of surveys: ${data.totalSurveys}</li>
+            <li>Average Age: ${data.avgAge}</li>
+            <li>Oldest person who participated: ${data.oldest}</li>
+            <li>Youngest person who participated: ${data.youngest}</li>
+            <li>Percentage of people who like Pizza: ${data.pizzaPercent}%</li>
+            <li>Percentage of people who like Pasta: ${data.pastaPercent}%</li>
+            <li>Percentage of people who like Pap and Wors: ${data.papPercent}%</li>
+            <li>Avg rating - Watch movies: ${data.rating.q1}</li>
+            <li>Avg rating - Listen to radio: ${data.rating.q2}</li>
+            <li>Avg rating - Eat out: ${data.rating.q3}</li>
+            <li>Avg rating - Watch TV: ${data.rating.q4}</li>
+          `;
+        })
+        .catch(err => {
+          document.getElementById('resultList').innerHTML = '<li>Error loading results</li>';
+        });
+    </script>
+
+  </div>
+  <!-- End of main-container -->
+
+  <script src="Sumsang.js"></script>
+</body>
+</html>
